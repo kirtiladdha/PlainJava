@@ -26,6 +26,4 @@ jobs:
         env:
           SONAR_TOKEN: 282cdaa080e790779baa7b0dae8dd734f8e10050
         run: ./gradlew build sonarqube --info
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-           commit_message: Auto commit
+   
