@@ -23,8 +23,9 @@ jobs:
       - name: Build with Gradle and generate JUnit test results
         run: chmod +x gradlew && ./gradlew build test jacocoTestReport
       - name: Upload test results
-        uses: actions/upload-test-results@v2
+        uses: actions/upload-artifact@v2
         with:
+          name: test-results
           path: build/test-results/test
       - name: Test Reporter
         uses: dorny/test-reporter@v1.6.0
@@ -32,3 +33,7 @@ jobs:
         env:
           SONAR_TOKEN: 282cdaa080e790779baa7b0dae8dd734f8e10050
         run: ./gradlew build sonarqube --info
+In this example
+
+
+
