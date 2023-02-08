@@ -1,3 +1,4 @@
+package com.tomgregory;
 public class Calculator {
 
     public double add(double a, double b) {
