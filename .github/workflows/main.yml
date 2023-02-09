@@ -21,7 +21,7 @@ jobs:
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
       - name: Run test cases
-        run: ./gradlew test
+        run: chmod +x gradlew && ./gradlew test
       - name: Generate test report
         run: ./gradlew jacocoTestReport
       - name: Analyze with SonarCloud
