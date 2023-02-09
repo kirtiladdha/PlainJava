@@ -8,6 +8,12 @@ public class CalculatorTest {
     public void canRunApplication() {
         Calculator calc = new Calculator();
         int result = calc.add(1, 2);
+        assertEquals(5, result);
+    }
+     @Test
+    public void canADd() {
+        Calculator calc = new Calculator();
+        int result = calc.add(1, 2);
         assertEquals(3, result);
     }
 }
