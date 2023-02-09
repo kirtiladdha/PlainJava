@@ -20,10 +20,11 @@ jobs:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
-      - name: Build with Gradle
-        run: chmod +x gradlew && ./gradlew build
-      - name: Build and analyze
+      - name: Run test cases
+        run: ./gradlew test
+      - name: Generate test report
+        run: ./gradlew jacocoTestReport
+      - name: Analyze with SonarCloud
         env:
           SONAR_TOKEN: 282cdaa080e790779baa7b0dae8dd734f8e10050
-        run: ./gradlew build sonarqube --info
-   
+        run: ./gradlew sonarqube --info
