@@ -21,9 +21,9 @@ jobs:
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
       - name: Run test cases
-        run: chmod +x gradlew && ./gradlew test
+        run: chmod +x gradlew && ./gradlew wrapper --gradle-version 7.6 && ./gradlew test
       - name: Generate test report
-        run: ./gradlew jacocoTestReport
+        run: ./gradlew wrapper --gradle-version 7.6 && ./gradlew jacocoTestReport
       - name: Analyze with SonarCloud
         env:
           SONAR_TOKEN: 282cdaa080e790779baa7b0dae8dd734f8e10050
