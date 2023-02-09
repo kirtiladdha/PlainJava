@@ -1,7 +1,7 @@
 package com.tomgregory;
 public class Calculator {
 
-    public double add(int a, int b) {
+    public int add(int a, int b) {
         // this class is for adding
         return a + b;
     }
